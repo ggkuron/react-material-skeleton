@@ -2,10 +2,9 @@ import * as React from 'react';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 
 export interface Props {
-    content: string;
 }
 
-export default class CustomisedTable extends React.Component<Props, {}> {
+export default class CustomisedTable extends React.Component<Props, any> {
     render() {
         return <div>
               <Table multiSelectable={true} >

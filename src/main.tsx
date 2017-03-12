@@ -5,13 +5,19 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
 import AppBar from 'material-ui/AppBar';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import Table from './table'
-
-export interface Props {
-    content: string;
-}
+import Table from './table';
+import SideMenu from './sidemenu';
 
 injectTapEventPlugin();
+
+export interface Props {
+}
+
+const styles = {
+    tabs: {
+        marginTop: 50
+    }
+}
 
 export default class MyApp extends React.Component<Props, {}> {
     render() {
@@ -19,15 +25,15 @@ export default class MyApp extends React.Component<Props, {}> {
             <MuiThemeProvider muiTheme={getMuiTheme()}>
                 <div>
                   <AppBar title="" />
-                  <Tabs>
-                    <Tab label="一覧">
-                      <Table content="" />
+                  <SideMenu />
+                  <Tabs style={styles.tabs}>
+                    <Tab label="list">
+                      <Table />
                     </Tab>
-                    <Tab label="登録">
+                    <Tab label="entry">
                       <div>
                         <TextField 
-                           defaultValue={this.props.content}
-                           floatingLabelText="hoge"
+                           floatingLabelText="foo"
                         />
                       </div>
                     </Tab>
